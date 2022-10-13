@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+# Own ignores
+.DS_Store
+
 # Object files
 *.o
 *.ko

@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:00:18 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 11:40:23 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:12:42 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	choose_fractol(char *str)
 		return (MANDELBROT);
 	if (ft_strequ(str, "julia"))
 		return (JULIA);
+	if (ft_strequ(str, "burningship"))
+		return (BURNINGSHIP);
 	else
 		return (0);
 }

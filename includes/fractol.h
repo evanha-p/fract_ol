@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:35:58 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 11:31:36 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:11:53 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 # define MANDELBROT 1
 # define JULIA 2
+# define BURNINGSHIP 3
 
 # define CAST_JUMP 4
 # define MAX_ITER 80
@@ -49,7 +50,7 @@ typedef struct s_fract
 	int		fractal;
 }	t_fract;
 
-int		mandelbrot(double c_re, double c_img);
+int		mandelbrot_ship(double c_re, double c_img, int fractol);
 void	init_values(t_fract *fract);
 void	error_msg(char *msg);
 void	check_mlx(t_mlx mlx);

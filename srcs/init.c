@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 11:10:50 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 11:26:32 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:49:15 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	init_values(t_fract *fract)
 		fract->x_end = 1;
 		fract->y_start = -1;
 		fract->y_end = 1;
+		fract->l_mouse_pressed = false;
 	}
 	else
 	{
@@ -27,5 +28,6 @@ void	init_values(t_fract *fract)
 		fract->x_end = 3;
 		fract->y_start = -3;
 		fract->y_end = 3;
+		fract->l_mouse_pressed = false;
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:03:18 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 14:17:32 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:55:01 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		button_press(int button, t_fract *fract)
+int	button_press(int button, t_fract *fract)
 {
 	if (button == ESC)
 		close_program(&fract->mlx);

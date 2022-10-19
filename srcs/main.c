@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:00:18 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 14:19:47 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:58:30 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	choose_fractol(char *str)
 void	put_pxl(char *char_ptr, int x, int y, int color)
 {
 	if (x < 0 || y < 0 || x >= IMG_W || y >= IMG_H)
-		return;
-	*(int *)(char_ptr + ((x + y * IMG_W) * CAST_JUMP)) = color; 
+		return ;
+	*(int *)(char_ptr + ((x + y * IMG_W) * CAST_JUMP)) = color;
 }
 
 void	iterate_screen(t_fract *fract)
@@ -57,8 +57,8 @@ void	iterate_screen(t_fract *fract)
 			if (v.ret == 0)
 				v.color = 0;
 			else
-				v.color = 0xffffff - (int)(v.ret * 0xffffff / MAX_ITER);	
-			put_pxl(fract->mlx.char_ptr, v.x, v.y, v.color);	
+				v.color = 0xffffff - (int)(v.ret * 0xffffff / MAX_ITER);
+			put_pxl(fract->mlx.char_ptr, v.x, v.y, v.color);
 			v.x++;
 		}
 		v.y++;

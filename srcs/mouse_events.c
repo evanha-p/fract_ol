@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 12:46:09 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 14:27:46 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:58:47 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static	void	zoom_out(int x, int y, t_fract *fract)
 			fract->mlx.img_ptr, 0, 0);
 }
 
-int		mouse_button(int button, int x, int y, t_fract *fract)
+int	mouse_button(int button, int x, int y, t_fract *fract)
 {
 	if (button == SCROLL_UP && x > 0 && x < IMG_W && y > 0 && y < IMG_H)
 		zoom_in(x, y, fract);
@@ -62,7 +62,7 @@ int		mouse_button(int button, int x, int y, t_fract *fract)
 	return (0);
 }
 
-int		mouse_movement(int x, int y, t_fract *fract)
+int	mouse_movement(int x, int y, t_fract *fract)
 {
 	if (x > 0 && x < IMG_W && y > 0 && y < IMG_H && fract->l_mouse_pressed)
 	{

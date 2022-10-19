@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:00:18 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 13:36:42 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:19:47 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	close_program(t_mlx *mlx)
 {
 	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
 	mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
+	ft_putstr("You have exited the program\n");
 	exit(EXIT_SUCCESS);
 }
 
@@ -52,7 +53,7 @@ void	iterate_screen(t_fract *fract)
 					(fract->x_end - fract->x_start));
 			v.c_img = (fract->y_start + ((double)v.y / IMG_H) * \
 					(fract->y_end - fract->y_start));
-			v.ret = picker(fract->fractal, v.c_re, v.c_img);
+			v.ret = picker(*fract, v.c_re, v.c_img);
 			if (v.ret == 0)
 				v.color = 0;
 			else

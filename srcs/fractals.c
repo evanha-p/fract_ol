@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:40:03 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 12:17:43 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:20:14 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int		mandelbrot_ship(double c_re, double c_img, int fractol)
 	return (0);
 }
 
-int		picker(int fractal, double c_re, double c_img)
+int		picker(t_fract fract, double c_re, double c_img)
 {
-	if (fractal == MANDELBROT)
+	if (fract.fractal == MANDELBROT)
 		return (mandelbrot_ship(c_re, c_img, MANDELBROT));
-	if (fractal == BURNINGSHIP)
+	if (fract.fractal == BURNINGSHIP)
 		return (mandelbrot_ship(c_re, c_img, BURNINGSHIP));
 	else
 		return (0);

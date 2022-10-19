@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:35:58 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 13:51:49 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:20:34 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # define LEFT_MOUSE 1
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
+# define ESC 53
 
 typedef enum e_bool
 {
@@ -60,6 +61,8 @@ typedef struct s_fract
 	t_mlx	mlx;
 	int		fractal;
 	t_bool	l_mouse_pressed;
+	double	c_julian_re;
+	double	c_julian_img;
 }	t_fract;
 
 typedef struct s_var
@@ -77,8 +80,10 @@ int		mandelbrot_ship(double c_re, double c_img, int fractol);
 void	init_values(t_fract *fract);
 void	error_msg(char *msg);
 void	check_mlx(t_mlx mlx);
-int		picker(int fractal, double c_re, double c_img);
+int		picker(t_fract fract, double c_re, double c_img);
 void	events(t_fract *fract);
 int		mouse_button(int button, int x, int y, t_fract *fract);
+int		mouse_movement(int x, int y, t_fract *fract);
+int		close_program(t_mlx *mlx);
 
 #endif

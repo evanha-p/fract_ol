@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 18:35:58 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/13 20:34:24 by evanha-p         ###   ########.fr       */
+/*   Created: 2022/10/19 09:00:18 by evanha-p          #+#    #+#             */
+/*   Updated: 2022/10/19 09:19:11 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "fractol.h"
 
-# include "..libft/includes/libft.h"
-# include <stdlib.h>
-# include <math.h>
-# include <fcntl.h>
-
-# define IMG_W 2000
-# define IMG_H 2000
-
-#endif
+int	main(int argc, char **argv)
+{
+	if (argc != 2)
+		error_msg("Usage: ./fractol <fractal name here>\n");
+}

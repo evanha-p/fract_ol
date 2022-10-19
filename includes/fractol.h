@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:35:58 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 09:07:41 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 09:24:46 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ typedef struct s_fract
 	t_mlx	*mlx;
 	int		fractal;
 }	t_fract;
+
+void	error_msg(char *msg);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:12:29 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 09:13:43 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 09:24:30 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	error_msg(char *str)
+void	error_msg(char *msg)
 {
-	ft_putstr_fd(str, 2);
+	ft_putstr_fd(msg, 2);
 }

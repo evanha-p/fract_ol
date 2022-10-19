@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:35:58 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 10:40:03 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 11:23:05 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,10 @@ typedef struct s_fract
 	t_mlx	mlx;
 	int		fractal;
 }	t_fract;
+
+int		mandelbrot(double c_re, double c_img);
+void	init_values(t_fract *fract);
+void	error_msg(char *msg);
+void	check_mlx(t_mlx mlx);
 
 #endif

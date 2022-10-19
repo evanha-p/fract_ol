@@ -6,11 +6,18 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:00:18 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 12:12:42 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:30:56 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+int	close_program(t_mlx *mlx)
+{
+	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
+	mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
+	exit(EXIT_SUCCESS);
+}
 
 int	choose_fractol(char *str)
 {
@@ -33,32 +40,30 @@ void	put_pxl(char *char_ptr, int x, int y, int color)
 
 void	iterate_screen(t_fract *fract)
 {
-	int		x;
-	int		y;
-	double	c_re;
-	double	c_img;
-	int		ret;
-	int		color;
+	t_var	v;
 
-	y = 0;
-	while (y < IMG_H)
+	v.y = 0;
+	while (v.y < IMG_H)
 	{
-		x = 0;
-		while (x < IMG_W)
+		v.x = 0;
+		while (v.x < IMG_W)
 		{
-			c_re = (fract->x_start + ((double)x / IMG_W) * (fract->x_end - fract->x_start));
-			c_img = (fract->y_start + ((double)y / IMG_H) * (fract->y_end - fract->y_start));
-			ret = picker(fract->fractal, c_re, c_img);
-			if (ret == 0)
-				color = 0;
+			v.c_re = (fract->x_start + ((double)v.x / IMG_W) * \
+					(fract->x_end - fract->x_start));
+			v.c_img = (fract->y_start + ((double)v.y / IMG_H) * \
+					(fract->y_end - fract->y_start));
+			v.ret = picker(fract->fractal, v.c_re, v.c_img);
+			if (v.ret == 0)
+				v.color = 0;
 			else
-				color = 0xffffff - (int)(ret * 0xffffff / MAX_ITER);	
-			put_pxl(fract->mlx.char_ptr, x, y, color);	
-			x++;
+				v.color = 0xffffff - (int)(v.ret * 0xffffff / MAX_ITER);	
+			put_pxl(fract->mlx.char_ptr, v.x, v.y, v.color);	
+			v.x++;
 		}
-		y++;
+		v.y++;
 	}
-	mlx_put_image_to_window(fract->mlx.mlx_ptr, fract->mlx.win_ptr, fract->mlx.img_ptr, 0, 0);
+	mlx_put_image_to_window(fract->mlx.mlx_ptr, fract->mlx.win_ptr, \
+			fract->mlx.img_ptr, 0, 0);
 }
 
 int	main(int argc, char **argv)
@@ -79,6 +84,8 @@ int	main(int argc, char **argv)
 	check_mlx(fract.mlx);
 	init_values(&fract);
 	iterate_screen(&fract);
+	events(&fract);
+	mlx_hook(fract.mlx.win_ptr, 17, 0, &close_program, &fract.mlx);
 	mlx_loop(fract.mlx.mlx_ptr);
 	return (0);
 }

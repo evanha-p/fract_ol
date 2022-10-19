@@ -3,6 +3,8 @@
 
 # Own ignores
 .DS_Store
+fractol
+pre_requisites
 
 # Object files
 *.o

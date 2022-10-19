@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:00:18 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 11:23:22 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 11:40:23 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	iterate_screen(t_fract *fract)
 		{
 			c_re = (fract->x_start + ((double)x / IMG_W) * (fract->x_end - fract->x_start));
 			c_img = (fract->y_start + ((double)y / IMG_H) * (fract->y_end - fract->y_start));
-			ret = mandelbrot(c_re, c_img);
+			ret = picker(fract->fractal, c_re, c_img);
 			if (ret == 0)
 				color = 0;
 			else
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	t_fract	fract;
 
 	if (argc != 2)
-		error_msg("Usage: ./fractol <fractal name here>\n");
+		error_msg("Error: incorrect number of arguments\n");
 	fract.fractal = choose_fractol(argv[1]);
 	if (fract.fractal == 0)
 		error_msg("Error: fractal not found\n");

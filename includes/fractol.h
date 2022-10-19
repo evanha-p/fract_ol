@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:35:58 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 11:23:05 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 11:31:36 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int		mandelbrot(double c_re, double c_img);
 void	init_values(t_fract *fract);
 void	error_msg(char *msg);
 void	check_mlx(t_mlx mlx);
+int		picker(int fractal, double c_re, double c_img);
 
 #endif

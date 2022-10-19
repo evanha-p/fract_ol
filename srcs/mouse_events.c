@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 12:46:09 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 13:50:11 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:11:37 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,21 @@ int		mouse_button(int button, int x, int y, t_fract *fract)
 			fract->l_mouse_pressed = false;
 		else
 			fract->l_mouse_pressed = true;
+	}
+	return (0);
+}
+
+int		mouse_movement(int x, int y, t_fract *fract)
+{
+	if (x > 0 && x < IMG_W && y > 0 && y < IMG_H && fract->l_mouse_pressed)
+	{
+		fract->c_julian_re = (fract->x_start + ((double)x / IMG_W) * \
+				(fract->x_end - fract->x_start));
+		fract->c_julian_img = (fract->y_start + ((double)y / IMG_H) * \
+				(fract->y_end - fract->y_start));
+		iterate_screen(fract);
+		mlx_put_image_to_window(fract->mlx.mlx_ptr, fract->mlx.win_ptr, \
+				fract->mlx.img_ptr, 0, 0);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:35:58 by evanha-p          #+#    #+#             */
-/*   Updated: 2022/10/19 13:27:57 by evanha-p         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:51:49 by evanha-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 # define IMG_W 1000
 # define IMG_H 1000
+# define ZOOM 0.2
 
 # define MANDELBROT 1
 # define JULIA 2
@@ -71,11 +72,13 @@ typedef struct s_var
 	int		color;
 }	t_var;
 
+void	iterate_screen(t_fract *fract);
 int		mandelbrot_ship(double c_re, double c_img, int fractol);
 void	init_values(t_fract *fract);
 void	error_msg(char *msg);
 void	check_mlx(t_mlx mlx);
 int		picker(int fractal, double c_re, double c_img);
 void	events(t_fract *fract);
+int		mouse_button(int button, int x, int y, t_fract *fract);
 
 #endif

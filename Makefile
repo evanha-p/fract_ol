@@ -6,7 +6,7 @@
 #    By: evanha-p <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 18:23:20 by evanha-p          #+#    #+#              #
-#    Updated: 2022/10/19 11:25:36 by evanha-p         ###   ########.fr        #
+#    Updated: 2022/10/19 13:37:05 by evanha-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ_FOLDER		=	obj
 FOLDER_LIST		=	$(H_FOLDER) $(C_FOLDER) $(OBJ_FOLDER)
 
 H_FILES			=	$(NAME).h
-C_FILES			=	errors.c fractals.c init.c main.c
+C_FILES			=	errors.c events.c fractals.c init.c main.c mouse_events.c
 
 H_PATHS			=	$(addprefix $(H_FOLDER)/, $(H_FILES))
 C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
